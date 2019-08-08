@@ -1,0 +1,35 @@
+.user-signin-signup {
+  .form-control {
+    @extend .form-control-lg;
+    @extend .text-center;
+    @extend .py-3;
+    height: auto;
+  }
+
+  .custom-control label {
+    @extend .text-grey;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.my-account-wrapper {
+  box-shadow: 0 1px 1px 0px #b4b4b4a1;
+
+  .my-account-content {
+    .nav-link:not(.btn-primary) {
+      @extend .text-black;
+      @extend .rounded-0;
+      border-bottom: 1px solid color(lightgrey);
+      font-size: 18px;
+      transition: all .3s ease-in-out;
+
+      &:hover,
+      &:active,
+      &.active {
+        @extend .bg-lightgrey;
+        @extend .text-main;
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+.checkout-wrapper {
+  @extend %page-wrapper;
+
+  .checkout-footer {
+    .btn {
+      @extend .px-4;
+      @extend .font-weight-bold;
+      min-width: 128.22px;
+      border-radius: 30px;
+    }
+  }
+
+  .steps-bar {
+    @extend .overflow-hidden;
+    @extend .pt-3;
+
+    .steps-bar-item {
+      @extend .text-right;
+      @extend .w-100;
+      @extend .position-relative;
+      font-size: 18px;
+
+      &.step-checked {
+
+        &::before,
+        &::after {
+          @extend .bg-main;
+        }
+      }
+
+      &::before,
+      &::after {
+        transition: background-color .3s ease-in-out;
+      }
+
+
+      &:first-of-type {
+        @extend .text-left;
+
+        &::after {
+          @extend .d-none;
+        }
+
+        &::before {
+          left: -2px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        @extend .text-center;
+
+        &::after {
+          z-index: 1;
+          width: 150%;
+          right: 50%;
+        }
+      }
+
+      &:nth-of-type(3) {
+        &::after {
+          width: 125%;
+          right: 50px;
+        }
+
+        &::before {
+          right: 25px;
+        }
+      }
+
+      &:last-of-type {
+        &::before {
+          right: -2px;
+        }
+      }
+
+      &::before {
+        @extend .bg-lightgrey;
+        @extend .rounded-circle;
+        @extend .position-absolute;
+        border: 2px solid #fff;
+        content: '';
+        width: 25px;
+        height: 25px;
+        top: -14.5px;
+        right: calc(50% - 13px);
+        z-index: 5;
+      }
+
+      &::after {
+        @extend .position-absolute;
+        content: '';
+        background-color: color(lightgrey);
+        width: 100%;
+        right: 25px;
+        top: -4.5px;
+        height: 5px;
+      }
+
+    }
+  }
+
+  // Step two confirmation
+  .checkout-confirmation {
+    .table {
+      tbody {
+        tr:nth-of-type(odd) {
+          background-color: #f7f7f7;
+        }
+
+        td {
+          @extend .border-0;
+
+          &:not(:first-of-type) {
+            @extend .text-center;
+          }
+
+          &:last-of-type {
+            font-size: 20px;
+          }
+        }
+
+      }
+
+      tr {
+        th {
+          @extend .border-0;
+
+          &:not(:first-of-type) {
+            @extend .text-center;
+          }
+        }
+      }
+    }
+
+    .new-line {
+      @extend .my-5;
+      border-bottom: 2px solid color(lightgrey);
+    }
+
+    .coupon-input {
+      border-radius: 30px;
+    }
+  }
+
+  //./ End of confirmation
+
+  // Payments options
+  .checkout-payments {
+    .payment-field {
+      height: 180px;
+      background-color: #f9f9f9;
+      border: 1px solid #d8d8d8;
+      cursor: pointer;
+
+      &.selected {
+        border-color: #6eb2fb;
+      }
+    }
+
+    .custom-control-label {
+      font-size: 19px;
+    }
+
+    .form-group {
+      label {
+        @extend .text-grey;
+        @extend .font-weight-bold;
+        font-size: 19px;
+      }
+
+      .InputElement::placeholder {
+        color: color(grey) !important;
+      }
+    }
+
+    .form-control {
+      @extend .py-3;
+      @extend .px-2;
+
+      &.StripeElement--focus {
+        border-color: #00d3ca;
+      }
+
+      &.StripeElement--invalid {
+        @extend .border-main;
+      }
+
+    }
+
+  }
+
+}

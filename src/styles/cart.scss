@@ -1,0 +1,65 @@
+.cart {
+
+  .modal {
+    transition: transform .3s ease-in;
+    transform: translateY(-100%);
+
+    &.show {
+      transform: translateY(0);
+    }
+  }
+
+  .modal-dialog {
+    @media(min-width: 992px) {
+      max-width: 1000px;
+    }
+  }
+
+  .modal-title {
+    font-size: 24px;
+  }
+
+  .modal-body {
+    .table {
+      th {
+        @extend .border-top-0;
+        @extend .text-grey;
+      }
+
+      td {
+        @extend .border-top-0;
+        vertical-align: middle;
+        font-size: 19px;
+      }
+
+      .cart-product-info {
+        .cart-product-img {
+          width: 106px;
+          height: 106px;
+        }
+
+        h3 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    .btn {
+      @extend .py-2;
+      @extend .px-4;
+      border-radius: 30px;
+    }
+  }
+
+}

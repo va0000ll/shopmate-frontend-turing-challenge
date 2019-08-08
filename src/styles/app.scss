@@ -1,0 +1,113 @@
+// @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap');
+
+// @font-face {
+//   font-family: 'montserrat';
+//   src: local('Montserrat-Bold'), url(../fonts/Montserrat-Bold.ttf) format('ttf');
+// }
+
+@import './bootstrap.scss';
+@import './variables.scss';
+@import './layout.scss';
+@import './modules.scss';
+@import './pages.scss';
+@import './reviews.scss';
+@import './cart.scss';
+@import './checkout.scss';
+@import './user.scss';
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Montserrat';
+}
+
+a,
+.btn-link {
+  color: color(main);
+
+  &:hover {
+    color: darken(color(main), 15%);
+  }
+}
+
+.btn {
+  @extend .shadow-none;
+}
+
+.btn.btn-primary {
+  @extend .shadow-none;
+  padding: 13px 17px 13px 17px;
+  border-radius: 30px;
+  background-color: color(main);
+  border-color: color(main);
+  min-width: 115px;
+
+  &:hover,
+  &:not(:disabled):not(.disabled):active,
+  &:focus {
+    background-color: darken(color(main), 15%);
+    border-color: darken(color(main), 15%);
+  }
+}
+
+.text-primary {
+  color: color(main) !important;
+}
+
+.form-control {
+  @extend .shadow-none;
+  @extend .border-lightgrey;
+  resize: none;
+  cursor: text;
+
+  &:focus {
+    border-color: #00d3ca;
+  }
+
+  &::placeholder {
+    color: color(grey);
+  }
+}
+
+.custom-control {
+  padding-left: 1.7rem;
+
+  label {
+    @extend .font-weight-lighter;
+    color: #6a6a6a;
+  }
+
+  .custom-control-input:checked~.custom-control-label::before {
+    border-color: #6eb2fb;
+    background-color: #6eb2fb;
+  }
+
+  .custom-control-label::after {
+    left: -1.55rem;
+  }
+
+  .custom-control-label::before {
+    @extend .shadow-none;
+    @extend .border-0;
+    background-color: #efefef;
+    top: .13rem;
+    left: -1.7rem;
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+}
+
+
+.alert {
+  opacity: 1;
+  transition: all .3s ease-in;
+
+  &:empty {
+    opacity: 0;
+  }
+}
+
+::placeholder {
+  color: color(grey) !important;
+  font-size: 19px;
+}

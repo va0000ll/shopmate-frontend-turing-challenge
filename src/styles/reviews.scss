@@ -1,0 +1,48 @@
+.product-reviews {
+  background-color: #f7f7f7;
+
+  h2 {
+    @extend .font-weight-bold;
+    font-size: 30px;
+  }
+
+  .reviews-list {
+    .review {
+      border-bottom: 1px solid #e5e5e5;
+
+      .reviewer-name {
+        font-size: 17px;
+      }
+
+      .review-time {
+        font-size: 13px;
+      }
+
+      .comment-text {
+        font-size: 18px;
+      }
+
+      .review-btns {
+
+        .btn {
+          @extend .rounded-circle;
+          @extend .mr-2;
+          background-color: #efefef;
+          border-color: #efefef;
+          height: 46px;
+        }
+      }
+    }
+  }
+
+  // Review form 
+
+
+}
+
+.review-rating-stars {
+  img {
+    cursor: pointer;
+    width: 25px;
+  }
+}

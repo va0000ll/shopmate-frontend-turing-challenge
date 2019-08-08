@@ -1,0 +1,29 @@
+$main-color : #f62f5e;
+$colors: (main: $main-color,
+  white: #fff,
+  lightgrey: #efefef,
+  black: #2e2e2e,
+  grey: #b4b4b4);
+
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+@each $name,
+$color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+  }
+
+  .border-#{$name} {
+    border-color: $color;
+  }
+}
+
+%page-wrapper {
+  box-shadow: 0 1px 2px 0px rgba(180, 180, 180, 0.6313725490196078);
+}

@@ -1,0 +1,58 @@
+.modules-1 {
+  @extend .px-5;
+  @extend .py-5;
+  background-image: url(../images/Images-modal4.png);
+  background-size: cover;
+  background-position: center center;
+
+  h1 {
+    @extend .font-weight-bold;
+    color: color(black);
+    font-size: 48px;
+    font-family: 'playfairdisplay';
+  }
+
+  .list-group-item {
+    @extend .bg-transparent;
+    @extend .border-0;
+    @extend .pl-0;
+    @extend .font-weight-bold;
+    @extend .d-inline-block;
+    @extend .py-0;
+    width: 300px;
+    font-size: 20px;
+
+    a {
+      @extend .text-white;
+      @extend .text-decoration-none;
+    }
+  }
+}
+
+.similar-products {
+  .similar-content {
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+      border-radius: 20px;
+      height: 8px;
+      background-color: #efefef;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background-color: #6c6d7a;
+    }
+
+    .card {
+      @extend .d-inline-block;
+      @extend .mr-3;
+      width: 265px;
+
+      &:last-child {
+        @extend .mr-0;
+      }
+    }
+  }
+}
